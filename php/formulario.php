@@ -16,7 +16,7 @@ $recipient = "alejandrosantillanjhanela@gmail.com, johanlinareslc@gmail.com";
 
 $subject = "Consulta vía Página Web CALILAB de $nombre";
 
-$header = "From: $email \r\n";
+$header = "From: $correo \r\n";
 $header .= "Content-Type: text/plain; charset=UTF-8";
 mail($recipient, $subject, $formcontent, $header) or die("Error!");
 header("Location: ../index.html");
