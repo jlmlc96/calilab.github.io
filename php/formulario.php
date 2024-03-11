@@ -6,7 +6,7 @@ $correo = $_POST['correo'];
 $mensaje = $_POST['mensaje'];
 
 $formcontent="
-    Nombre: $name \n
+    Nombre: $nombre \n
     Telefono: $telefono \n
     Correo: $correo \n
     Mensaje: $mensaje
