@@ -1,0 +1,834 @@
+
+:root {
+    --blanco: #ffffff;
+    --negro: #212121;
+    --primario: #008000;
+    --primario2: #006400;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+    /*COLOR REDES SOCIALES*/
+    --colorfacebook: #3b5998;
+    --colortiktok: #000000;
+    --coloryoutube: #e52a23;
+    --colortwitter: #1DA1F2;
+    --colormail: #747473;
+    --colorlinkedin: #0e76a8;
+    --colorinstagram: #C13584;
+    --colorwhatsapp: #25D366;
+}
+
+/* GLOBALES */
+
+html {
+    font-size: 62.5%; /*Hack para equilibrar el tamaño de la página*/
+    box-sizing: border-box; /*Hack para que no incluya dentro del tamaño el padding - Este código es para que no afecte el padding en la definición del height dónde se coloca el tamaño*/
+    scroll-snap-type: y mandatory; /*La y es vertical, la x es horizontal - Es para hacer scroll cuando navegas por la página se situa en una sola parte ya sea en la cabeza, cuerpo o pie de la página*/
+}
+
+/*SCROLL Snap
+.servicio,
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center; /*Es paar que se detenga en las clases selecionadas */
+   /* scroll-snap-stop: always;
+}*/
+
+/*BEFORE Y AFTER son seudoelementos, no se puede seleccionar o inspeccionar en la web, pero si existe en el código CSS*/
+*, *:before, *:after { /*El * selecciona todos los elementos de la página y los aplica en cada uno de ellos, el after before es dónde se puede colocar alguna cosa que sea después del texto y after es antes. */
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px; /*Este hack es para que el REM sea esclable de 1 a 10*/
+    font-family: 'Krub', sans-serif; /*Este es para la librería añadida de la fuente 400 y 700 tipo de letra en toda la página*/
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100% ); /*Esta línea es para colocar el color de fondo que va desde grisclaro hasta blanco, el top es para que vaya de abajo hacía arriba y el porcentaje es para que represente el nivel de color*/
+
+}
+
+
+/***********************************https://www.youtube.com/watch?v=OuoLQiXPitk*****************************************/
+
+a {
+    text-decoration: none;
+    color: var(--secundario);
+    font-weight: 700;
+    justify-content: flex-start;
+}
+
+/*header{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+}*/
+
+/* Estilos para el header */
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Estilos para la sección de información de contacto y redes sociales */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px; /* Ajusta el espaciado interno */
+    align-items: center;
+    grid-column: 1 / 3;
+}
+
+.horario,
+.telefono,
+.redes-sociales {
+    font-size: 16px;
+}
+
+.telefono {
+    color: white;
+}
+
+.redes-sociales a {
+    color: white;
+    margin-right: 10px; /* Espaciado entre iconos de redes sociales */
+}
+@media (max-width: 768px) {
+    .top-bar {
+        display: none
+    }
+}
+
+/************************************************************/
+a.logoverde {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    margin-left: 3rem;
+}
+ul.nav-list{
+    margin-left: -100px;
+}
+.top-bar svg:hover {
+    background-color: var(--secundario);
+    color: var(--negro);
+}
+/**********************************************************/
+.logoverde {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+.logoverde img{
+    height: 10rem;
+    margin-right: 1.5rem;
+    margin: 10px 15px 0px 15px;
+}
+
+@media (max-width: 768px) {
+    header{
+        flex-direction: column;
+    }
+}
+
+/******************************https://www.youtube.com/watch?v=OuoLQiXPitk**********************************************/
+
+/***************AGREGANDO LOS ICONOS DE REDES SOCIALES FLOTANTES****************/
+/******************https://www.youtube.com/watch?v=1WS3jO-3ZEo**********************/
+/*
+.container-bar{ /****/
+    /*width: 100%; /**Para que sea de un ancho de 100%**/
+    /*max-width: 55px; /**Tamaño**/
+    /*position: fixed; /**Para colocarlo de manera fija a la pantalla**/
+    /*left: 0; /**Para colocarlo de manera vertical**/
+    /*top: 24%; /**Es para que quede en medio de la página**/
+    /*z-index: 1;
+}*/
+/*.container-bar a{ /****/
+    /*display: block; /**Para que se mueva en bloque**/
+    /*padding: 15px; /**Le damos un relleno o forma**/
+    /*text-decoration: none; /**Le quitamos el subrayado**/
+    /*font-size: 17px; /**Aumentamos el tamaño**/
+    /*position: relative; /****/
+    /*transition: all 500ms ease; /**Para que tenga un efecto suave de all(todo) 500(dura 500milisegundos ease(efecto))**/
+    /*color: #fff;
+}
+.container-bar a:hover{
+    background: var(--negro); /**Fondo de color negro**/
+/*}*/
+/*.container-bar .icon-facebook1{
+    background: var(--colorfacebook);
+    border-radius: 0px 5px 0px 0px;
+}
+.container-bar .icon-tiktok1{
+    background: var(--colortiktok);
+}
+.container-bar .icon-youtube1{
+    background: var(--coloryoutube);
+}
+.container-bar .icon-linkedin1{
+    background: var(--colorlinkedin);
+}
+.container-bar .icon-instagram1{
+    background: var(--colorinstagram);
+}
+.container-bar .icon-mail1{
+    background: var(--colormail);
+}
+.container-bar .icon-twitter1{
+    background: var(--colortiktok);
+}
+.container-bar .icon-whatsapp1{
+    background: var(--colorwhatsapp);
+    border-radius: 0px 0px 5px 0px;
+}*/
+
+/*.container-bar #title1{ /**Para que el texto tenga una posición absoluta y sólo se vean los iconos**/
+    /*position: fixed; /**Posición fijo**/
+    /*background: #1c1c1c; 
+    /*padding: 6px; /**Relleno**/
+    /*border-radius: 3px; /**Borde redondeado**/
+    /*font-size: 15px;
+    margin-top: -4px; /**Se sube la letra para que quede centrado**/
+    /*transition: all 500ms ease; /**Efecto suave**/
+    /*opacity: 0; /**Para que se sea transparente**/
+    /*visibility: hidden; /**Para que se oculte el contenido**/
+/*}
+.container-bar a:hover #title1{ /**Cuando pasemos el mouse va a aparecer el texto que nombramos title1**/
+    /*opacity: 1; /**Para que sea visible**/
+    /*visibility: visible; /**Para que sea visible**/
+    /*margin-left: 30px /**Para que el texto llamado title1 se mueba 30px a la derecha**/
+/*}*/
+/*.container-bar #title1:after{
+    position: absolute; /**pOSICIÓN ABSOLUTA**/
+    /*content: ''; /**Contenido nulo**/
+    /*border-left: 7px solid transparent; /**Derecha**/
+    /*border-right: 6px solid #1c1c1c; /**Izquierda**/
+    /*border-top: 7px solid transparent; /**Arriba**/
+    /*border-bottom: 7px solid transparent; /**Abajo**/
+    /*right: 100%; /**Para que la flecha se coloque a la izquierza**/
+    /*top: 8px; /**Tamaño de la flecha**/
+/*}*/
+/*#btn-social{ /**Para que desaparezca la barra de redes sociales**/
+    /*display: none; /**Para que desaparezca**/
+/*}*/
+/*.icon-play{ /**Para la flecha**/
+    /*cursor: pointer; /**Es para que al pasar el mouse muestre una manito**/
+    /*transition: all 0.4s; /**Transición suave**/
+    /*font-size: 12px; /**Tamaño**/
+    /*margin-bottom: 5px; /**Espacio entre la flecha y los iconos**/
+    /*display: inline-block;  /**Para qu enpije**/
+    /*transform: rotate(180deg); /**Para que se invierta la flecha**/
+    /*color: #49b0e6; /**Damos color**/
+/*}*/
+/*#btn-social:checked ~.icon-play{
+    transform: rotate(0deg); /**Cuando le damos un click se oculta**/
+/*}*/
+/*.icon-social{
+    transition: all 0.4s; /**Mantiene la misma transición**/
+    /*transform: translateX(0%);
+    box-shadow: 0px 1px 10px rgba(0,0,0,3); /**Para dar sombra a los iconos**/
+/*}*/
+/*#btn-social:checked ~ .icon-social{ /**Para que se oculte la barra**/
+    /*transform: translateX(-100%); /**Se oculta moviendoce la barra de redes sociales**/
+/*}*/
+
+/**************4 lineas de contenedor estaban en plomo************************************************************************/
+
+.contenedor {
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto; /*Esto es el mismo código que el de abajo sólo que declara uno por uno y abajo está resumido*/ 
+
+    /*margin: 0 auto 0 auto; Esto es lo mismo que de arriba sólo que está resumido y es lo mismo que de abajo*/
+    
+    max-width: 120rem; /*En este punto max-width quiere decir que tome los 1200px que se le indica cómo máximo, si no debe de tomar o acoplarse a la pantalla que tiene por defecto*/
+    margin: 0 auto; /*Este cógido está resumido, ya que CSS ya sabe que posición son para declarar arriba abajo derecha izquierda se encuentran */
+}
+
+.boton {
+    background-color: var(--secundario); /**Es el color del boton**/
+    color: var(--blanco); /**Es el color de la letra**/
+    padding: 1rem 3rem; /**El padding es el fondo del boton cuanto hacia la izquierda cuando hacia la derecha**/
+    margin-top: 3rem; /**Para que separe 30 pixeles de un boton al otro**/
+    font-size: 2rem;
+    text-decoration: none; /**Quita la línea de sub rayación de la letra**/
+    text-transform: uppercase; /**Para que el texto estea en mayusculas**/
+    font-weight: bold; /**Es para poner el texto en negrita, o tambien se puede utilizar la fuente 700**/
+    border-radius: .5rem; /**Los bordes del boton sean redondeados**/
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 768px) {
+    .boton{
+        width: auto; /**Auto porque se va a resetear**/
+    }
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    /*-moz-box-shadow: 0px 5px 15px 0px rgba(128,126,128,0.89);
+    box-shadow: 0px 5px 15px 0px rgba(128,126,128,0.89);*/
+
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* TIPOGRAFÍA */
+
+h1{
+    font-size: 3.5rem;
+}
+h2{
+    font-size: 2.5rem;
+}
+h3{
+    font-size: 2rem;
+    font-weight: 700;
+}
+h1, h2, h3{
+    text-align: center;
+}
+
+
+/* TITULOS */
+
+.titulo span {
+    color: black;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo {
+    background-image: url(../imagen/LOGOVERDE.png);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    height: 10rem; /*ALTURA de 150px para el icono que luego se vuelve un circulo*/
+    width: 13rem; 
+    position: relative; /*Relative se le nombra a la parte principal dónde toma una posición estática*/
+    margin-bottom: 1rem; /*Este código es para que se separe la imagen del cuerpo dónde están los servicios*/
+    
+}
+
+
+.tituloservicio {
+    margin-top: 5rem;
+}
+
+
+/* UTILIDADES */
+
+.w-100 {
+    width: 80%; /*Esto agrega un ancho del 100% del boton enviar, la cual se declara en html cómo una clase del boton enviar*/
+}
+
+@media (min-width: 768px) {
+    .w-100 {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex; /*Es para ordenar en forma de fila de izquiera a derecha*/
+}
+
+.alinear-derecha {
+    justify-content: flex-end; /*Esto es para que luego de que lo ordenen de forma en filas de izquiera a derecha, se coloque el boton en el última lado de la derecha (flex-end)*/
+}
+
+/***********************MODIFICANDO MENU DE NAVEGACIÓN 2 *********************/
+/***********************MODIFICANDO MENU DE NAVEGACIÓN 2 *********************/
+/* Ocultar submenú por defecto */
+.submenu {
+    display: none;
+}
+
+/* Mostrar submenú al pasar el mouse sobre el enlace principal */
+.nav-list > li:hover .submenu {
+    display: block;
+    position: absolute;
+    background-color: black;
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilos para los subelementos del menú desplegable */
+/* Estilos para los subelementos del menú desplegable */
+.menu__inside {
+    text-align: left; /* Alinear a la izquierda */
+    padding: 8px 20px; /* Espaciado interno */
+}
+
+/* Estilos para hacer el menú de servicios responsive en pantallas de hasta 768px de ancho */
+@media screen and (max-width: 768px) {
+    .nav-list {
+        flex-direction: column; /* Cambiar a diseño de columna */
+        align-items: flex-start; /* Alinear elementos a la izquierda */
+    }
+
+    .nav-list > li {
+        position: relative; /* Establecer posición relativa para elementos principales */
+    }
+
+    .submenu {
+        position: absolute; /* Establecer posición absoluta para submenú */
+        top: 0; /* Colocar submenú al principio */
+        right: 100%; /* Alinear submenú al lado derecho del elemento principal */
+        display: none; /* Ocultar submenú por defecto */
+        background-color: #fff; /* Color de fondo */
+        padding: 10px; /* Espaciado interno */
+    }
+
+    .nav-list > li:hover .submenu {
+        display: block; /* Mostrar submenú al pasar el mouse sobre el elemento principal */
+    }
+
+    .menu__link--inside {
+        padding: 8px 20px; /* Espaciado interno para los subelementos */
+        background-color: var(--negro);
+    }
+}
+
+/***********************MODIFICANDO MENU DE NAVEGACIÓN 2 *********************/
+/***********************MODIFICANDO MENU DE NAVEGACIÓN 2 *********************/
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+    align-items:flex-start;
+}
+
+@media screen and (max-width: 768px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 4rem;
+        background-color: transparent;
+        cursor: pointer;
+        align-items:flex-start;
+    }
+
+    .abrir-menu {
+        display: flex;
+        color: #1c1c1c;
+        position: absolute; /* Imprescindible */
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: inherit; /* Indiferente */
+        right: 0; /* X */
+        top: 0; /* Y */
+        transform: translate(0, 0); /* Reposicionar X,Y */
+        text-align: center;
+        background-color: #1c1c1c;
+        color: white;
+    }
+
+    .cerrar-menu {
+        color: #ececec;
+    }
+
+    .navegacion-principal {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1c1c1c;
+        padding: 6rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    .navegacion-principal.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-list li a {
+        color: #ecececec;
+    }
+}
+/***********************MODIFICANDO MENU DE NAVEGACIÓN*********************/
+
+/*https://www.youtube.com/watch?v=OuoLQiXPitk
+.nav-bg {
+    justify-content: space-evenly;
+}********************************************/
+
+.navegacion-principal {
+    display: flex; /*El display: flex hace que los elementos se muestren de izquierda a derecha*/
+    flex-direction: column; /*Es para ver la barra en forma vertical uno debajo del otro cuando es pequeño la pantalla*/
+    /*align-item: center; este seria para alinear verticarmente, es lo mismo flex-direction sólo que en otra dirección*/
+}
+
+
+.navegacion-principal a {
+    display: block; /*Lo vuelve de forma vertical para pantallas menores o hasta 768px declaradas arriba*/
+    text-align: left; /*Va en conjunto con lo de arriba una vez cambiado a vertical, se encarga de centrar estos elementos*/
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem; /*Agrega un poco mas de espacio de afuera hacia adentro padding*/
+}
+
+.navegacion-principal a:hover { /*:hover da el efecto de sombreado cuando colocas el mouse sobre la palabras */
+    background-color: var(--secundario);
+    color: var(--negro);
+}
+
+/***********************MODIFICANDO MENU DE NAVEGACIÓN*********************/
+
+
+/* HERO **************************************************************/
+
+.hero {
+    background-image: url(../imagen/hero1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position:static; /*Relative se le nombra a la parte principal dónde toma una posición estática*/
+    margin-bottom: 2rem; /*Este código es para que se separe la imagen del cuerpo dónde están los servicios*/
+    background-position: center center; /*Sirve cuando la pantalla se haga pequeño osea en celulares se vea la imagen del centro osea centrado*/
+}
+
+.contenido-hero {
+    /*Absolute este si se puede acoplar a cualquier parte del mapa principal, se adquiere con top, right, botton, left*/
+    /*background-color: rgba(0, 0, 0, .7); Es para aplicar la transparencia en imágenes, el último es el alfa que va de 0 a 1, 1 siendo el negro*/
+    background-color: rgb( 0 0 0 / 50% ); /*Este código realiza lo mismo que lo de arriba, sólo que se está implementando y lo recomiendan usar aunq no sea compatible con muchas páginas*/
+    width: 100%; /*El width y height es para que la imagen hijo se acople a la imagen de fondo padre "hero"*/
+    height: 100%;
+
+    display: flex; /*Es para posicionar de izquierda a derecha los elementos*/
+    flex-direction: column; /*Para direccionar en forma de columnas vertical*/
+    align-items: center; /*Para centrar en forma horizontal*/
+    justify-content: center; /*Para centrar en forma vertical*/
+}
+.contenido-hero h2, .contenido-hero p{
+    color: var(--blanco);
+    position:static;
+}
+
+/* NOSOTROS *********************************************************************************************************************/
+.nosotrosh2 {
+    margin-top: 5rem;
+}
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);   /*Es row porque va de arriba hacía abajo y coloca de 2 y auto es para que no deje espacio entre la imagen y las letras al pasar a otra pantalla grande*/
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;   /*Es para la separación que existe entre la columnas 20px es 2rem*/
+    }
+}
+
+.nosotros__contenido {
+    text-align: justify;
+    color: #000000;
+}
+
+.nosotros__imagen {
+    grid-row: 1 / 2;   /*Sirve para colocarlo arriba osea la imagen primero cuando es pequeña la pantalla*/
+    width: 100%;
+    border: 5px solid #333333; /* Ancho y color del borde */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra alrededor de la imagen */
+    transition: transform 0.3s ease; /* Transición suave al hacer hover */
+}
+.nosotros__imagen:hover {
+transform: scale(1.1); /* Escalado de la imagen al hacer hover */
+}
+
+@media (min-width: 768px) {
+    .nosotros__imagen {
+        grid-column: 2 / 3;
+    }
+}
+/* NOSOTROS FIN*********************************************************************************************************************/
+
+
+/** CONTACTO **/
+.servicioxx {
+    margin-top: 10rem;
+    margin-block: 5rem;
+}
+
+.formulario {
+    background-color: var(--gris); /*Para que el fondo del formulario sea Gris*/
+    width: min( 60rem, 100% ); /*min toma 2 parámetros -- Lo que hace es utilizar el valor más pequeño tipo el media query*/
+    margin: 0 auto; /*Se puede utilizar cuando es un formulario y quieres centrar horizontalmente, cuando no tenemos cómo padre un display: flex; */
+    padding: 2rem; /*Para hacer espacio dentro del cuadro osea centrar*/
+    border-radius: 1rem; /*Para redondear los bordes*/
+}
+
+.formulario fieldset {
+    border: none; /*Para quitar el borde osea esa línea que va al rededor del formulario*/
+}
+
+.formulario legend {
+    text-align: center; /*Centra el titulo del formulario*/
+    font-size: 1.8rem; /*Cóloca el tamaño de la letra para el titulo del formulario*/
+    text-transform: uppercase; /*Transforma el ttitulo del formulario a mayúsculas*/
+    font-weight: 700; /*Cóloca el título del formulario en letras negrita*/
+    margin-bottom: 2rem; /*Para separar el titulo del formulario con los demás botones*/
+    color: var(--blanco); /*Para poner color al titulo del formulario*/
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+
+    .campo:nth-child(3),
+    .campo:nth-child(4) {
+        grid-column: 1 / 3;
+    }
+}
+
+.campo {
+    margin-bottom: 1rem; /*Es para la separación de arriba hacia abajo que hay entre los campos*/
+}
+
+.campo label {
+    color: var(--blanco); /*Poner las letras en color blanco*/
+    font-weight: bold;  /*Poner las letras en negrita número 700*/
+    margin-bottom: .5rem; /*Es la separación que existe entre el label y el input*/
+    display: block; /*Coloca los elementos uno debajo del otro y hace que ocupen todo el espacio disponible por default*/
+}
+
+/*.campo input {
+    background-color: red;   *** Es para que ocupe el cambio en todos los input
+}*/
+/*.campo input[type="text"]{
+    background-color: red;   *** Es para especificar que sólo se aplique el cambio en el input de type text
+}*/
+
+.campo textarea {
+    height: 20rem;
+}
+
+.input-text { /*Se agregó en html la clase input-text para tomar todos los campos*/
+    width: 100%; /*Es para que el Item cubra el 100% del espacio*/
+    border: none; /*Es para quitarle el borde que según dice se ve feo xd*/
+    padding: 1.5rem; /*Es para dar espacio dentro del item de 10px*/
+    border-radius: .5rem; /*Es para colocar los bordes del item redondeados*/
+}
+
+
+/* SERVICIOS iMPLEMENTANDO SERVICIOS DESDE https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=undexpand*/
+.servicio {
+    display: flex; /*Te coloca todo de izquierda a derecha, tipo fila luego convertimos*/
+    flex-direction: column; /*Lo convertimos a columnas - cambia de fila a columna posición*/
+    align-items: center; /*Lo centramos*/
+}
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal; /*Es para darle color a las letras del h3 y también puede utilizar el 400 ya que representa a lo que pidio para prestamo.*/
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.servicio p {
+    line-height: 2; /*Es para interlineado, espacio entre una letra y otra*/
+    text-align: center; /*Es para centrar las letras del párrafo*/
+    color: var(--blanco);
+}
+.servicio .iconos {
+    height: 15rem; /*ALTURA de 150px para el icono que luego se vuelve un circulo*/
+    width: 15rem; /*ANCHO de 150px*/
+    background-color: var(--primario2); /*Para darle color al icono*/
+    border-radius: 50%; /*Para darle bordes redondeados y este se convierta en un circulo le damos 50%*/
+    display: flex; /*Alineamos todo de lado tipo fila*/
+    justify-content: space-evenly; /*Esta caracteristica de la posición space-evenly conviene al de 2 iconos, ya que lo centra bien*/
+    align-items: center; /*Permite alinear verticalmente, osea te centra bien*/
+}
+  
+/* Sección de servicios */
+.services-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cambia el tamaño de las columnas automáticamente */
+    gap: 20px; /* Espacio entre las tarjetas de servicio */
+    justify-items: center; /* Centra horizontalmente las tarjetas de servicio */
+}
+
+/* Estilos para las tarjetas de servicio */
+.service-card {
+    background-color: #333333;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px; /* Establece el ancho máximo de la tarjeta */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.service-card h2 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.service-card p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.service-card button {
+    background-color: #24ad36;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.service-card button:hover {
+    background-color: #47ff33;
+}
+
+@media (min-width: 768px) {
+    .services-section {
+        grid-template-columns: repeat(3, 1fr); /* Cambia a tres columnas en pantallas grandes */
+    }
+}
+/* SERVICIOS iMPLEMENTANDO SERVICIOS DESDE https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=undexpand*/
+
+/*.enviar .boton {
+    width: 100%; Con este código agrega todo los parámetros descritos en la clase boton, pero además de eso si tiene la clase enviar lo coloca en 100% ocupa todo el ancho
+}*/
+/*************************************************FOOTER*******************************************************/
+/*.footer {
+    text-align: center;
+}*/
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: row; /* Cambio importante: colocar los elementos en una fila */
+    justify-content: space-around; /* Espacio uniforme entre los bloques */
+    flex-wrap: wrap; /* Asegura que los bloques se envuelvan cuando no haya suficiente espacio */
+}
+
+
+@media (min-width: 768px) {
+    img.logoverde1{
+        height: 13rem;
+        margin-right: 1.5rem;
+        margin: 10px 15px 0px 15px;
+    }
+}
+@media (max-width: 768px) {
+    .contact-info,
+    .links,
+    .social-media {
+        padding: 3rem;
+        padding-left: 5rem;
+        flex: 1; /* Los bloques ocuparán un tercio del ancho disponible */
+    }
+}
+
+h3.calilab {
+    font-size: 4rem;
+}
+
+.contact-info p {
+    color: white;
+    padding-left: 3rem;
+}
+
+/* Estilos para cada sección del footer */
+.contact-info,
+.links,
+.social-media {
+    padding-left: 0rem;
+}
+.links a {
+    color: var(--blanco);
+}
+
+.links a:hover {
+    background-color: var(--secundario);
+    color: var(--negro);
+}
+
+/* Estilos para los títulos de cada sección */
+.contact-info h2,
+.links h3,
+.social-media h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los enlaces de redes sociales */
+.social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media li {
+    margin-bottom: 50px; /* Espacio entre los íconos */
+}
+
+.social-media a {
+    color: white; /* Color de los enlaces */
+    font-size: 60px;
+    text-decoration: none;
+}
+
+.social-media svg:hover {
+    background-color: var(--secundario);
+    color: var(--negro);
+}
+
+/* Estilos específicos para los iconos de redes sociales */
+.social-media a i {
+    margin-right: 25px; /* Espacio entre el ícono y el texto */
+}
